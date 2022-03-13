@@ -1,6 +1,6 @@
 const express = require('express'); //importing expressjs
 //const colors = require('colors'); //importing colors
-const morgan = require('morgan'); //importing morgan
+//const morgan = require('morgan'); //importing morgan
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
@@ -12,7 +12,7 @@ const app = express(); // by using it we will create a server
     next();
 });*/
 
-app.use(morgan('dev')); // will print the request coming to the server
+//app.use(morgan('dev')); // will print the request coming to the server
 
 app.use(express.json({}));
 app.use(express.json({
@@ -37,4 +37,5 @@ app.use('/api/todo/auth',require('./routes/user'));
 
 const PORT = process.env.PORT || 3000; // process.env.PORT => this will the PORT allocated to it by the server || by default it will take 3000
 
-app.listen(PORT,console.log(`Server is running on port : ${PORT}`.red.underline.bold));
+// app.listen(PORT,console.log(`Server is running on port : ${PORT}`.red.underline.bold));
+app.listen(PORT,console.log(`Server is running on port : ${PORT}`));
