@@ -91,7 +91,7 @@ router.post('/login',async (req,res,next) => {
         });
 
         if(!user){
-            res.status(400).json({
+            return res.status(400).json({
                 success:false,
                 msg:'User not exist , Please register'
             });
